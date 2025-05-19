@@ -14,7 +14,8 @@ with open("intents.json", encoding="utf-8") as file:
 import os
 
 client = OpenAI(
-    api_key=os.getenv("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"),  # ✅ Safe
+    api_key=os.getenv("OPENAI_API_KEY"),
+ # ✅ Safe
     base_url="https://openrouter.ai/api/v1"
 )
 
@@ -200,6 +201,6 @@ chat_ui = gr.ChatInterface(
 
 
 
-chat_ui.launch(share=True)
+
 if __name__ == "__main__":
     chat_ui.launch(server_name="0.0.0.0", server_port=10000)
